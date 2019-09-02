@@ -181,6 +181,8 @@ void loop() {
           tone(buzzer, 1760);
         }
         if (teclas[numeroLinhas][numeroColunas] == '*') {
+          
+          digitalWrite(pinLinhas[4], LOW);
           int tempo = 120;
 
           int melody[] = {
@@ -215,7 +217,7 @@ void loop() {
           int divider = 0, noteDuration = 0;
 
           for (int thisNote = 0; thisNote < notes * 2; thisNote = thisNote + 2) {
-
+           
             // calculates the duration of each note
             divider = melody[thisNote + 1];
             if (divider > 0) {
@@ -235,17 +237,21 @@ void loop() {
 
             // stop the waveform generation before the next note.
             noTone(buzzer);
+             if(digitalRead(pinColunas[0]) == LOW){
+              break;
+            }
           }
         }
 
         if (teclas[numeroLinhas][numeroColunas] == '#') {
+          digitalWrite(pinLinhas[4], LOW);
           int tempo = 140;
 
           int melody[] = {
 
             // Happy Birthday
             // Score available at https://musescore.com/user/8221/scores/26906
-
+            REST, 2,
             NOTE_C4, 4, NOTE_C4, 8,
             NOTE_D4, -4, NOTE_C4, -4, NOTE_F4, -4,
             NOTE_E4, -2, NOTE_C4, 4, NOTE_C4, 8,
@@ -285,16 +291,20 @@ void loop() {
 
             // stop the waveform generation before the next note.
             noTone(buzzer);
+            if(digitalRead(pinColunas[2]) == LOW){
+              break;
+            }
           }
         }
 
         if (teclas[numeroLinhas][numeroColunas] == '0') {
-
+          digitalWrite(pinLinhas[4], LOW);
+//          if()
           int tempo = 114;
 
           int melody[] = {
 
-
+            REST, 2,
             NOTE_E4, 4,  NOTE_E4, 4,  NOTE_F4, 4,  NOTE_G4, 4, //1
             NOTE_G4, 4,  NOTE_F4, 4,  NOTE_E4, 4,  NOTE_D4, 4,
             NOTE_C4, 4,  NOTE_C4, 4,  NOTE_D4, 4,  NOTE_E4, 4,
@@ -345,6 +355,9 @@ void loop() {
 
             // stop the waveform generation before the next note.
             noTone(buzzer);
+            if(digitalRead(pinColunas[1]) == LOW){
+              break;
+            }
           }
         }
 
