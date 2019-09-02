@@ -98,8 +98,8 @@
 // pinos de 5 a 7 = colunas do teclado da esquerda pra direita.
 
 // arrays com pinos digitais do arduino na sequencia dos pinos do teclado.
-int pinLinhas[] = {22, 23, 24, 25};
-int pinColunas[] = {26, 27, 28};
+int pinLinhas[] = {23, 25, 27, 29};
+int pinColunas[] = {31, 33, 35};
 const int buzzer = 11;
 
 // array de chars representando cada tecla do teclado.
